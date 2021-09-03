@@ -2,3 +2,5 @@ node_modules
 /.fx/*.env
 /.fx/*.userdata
 .DS_Store
+.archive
+.archive.log

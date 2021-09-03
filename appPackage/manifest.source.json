@@ -15,12 +15,12 @@
         "outline": "outline.png"
     },
     "name": {
-        "short": "helly08201045",
+        "short": "helly09031731",
         "full": "This field is not used"
     },
     "description": {
-        "short": "Short description of helly08201045.",
-        "full": "Full description of helly08201045."
+        "short": "Short description of helly09031731.",
+        "full": "Full description of helly09031731."
     },
     "accentColor": "#FFFFFF",
     "bots": [
@@ -42,12 +42,12 @@
                     ],
                     "commands": [
                         {
-                            "title": "intro",
-                            "description": "Send introduction card of this Bot"
+                            "title": "welcome",
+                            "description": "Resend welcome card of this Bot"
                         },
                         {
-                            "title": "show",
-                            "description": "Show user profile by calling Microsoft Graph API with SSO"
+                            "title": "learn",
+                            "description": "Learn about Adaptive Card and Bot Command"
                         }
                     ]
                 }
