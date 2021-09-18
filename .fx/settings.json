@@ -1,0 +1,33 @@
+{
+    "appName": "helly09181207",
+    "projectId": "b4bfda9e-ccf8-4f47-91bf-65b682c3c483",
+    "solutionSettings": {
+        "name": "fx-solution-azure",
+        "version": "1.0.0",
+        "hostType": "Azure",
+        "azureResources": [
+            "sql",
+            "function"
+        ],
+        "capabilities": [
+            "Tab",
+            "Bot",
+            "MessagingExtension"
+        ],
+        "activeResourcePlugins": [
+            "fx-resource-frontend-hosting",
+            "fx-resource-identity",
+            "fx-resource-azure-sql",
+            "fx-resource-bot",
+            "fx-resource-aad-app-for-teams",
+            "fx-resource-function",
+            "fx-resource-local-debug",
+            "fx-resource-appstudio",
+            "fx-resource-simple-auth"
+        ]
+    },
+    "version": "1.0.0",
+    "activeEnvironment": "default",
+    "programmingLanguage": "javascript",
+    "defaultFunctionName": "getUserProfile"
+}
