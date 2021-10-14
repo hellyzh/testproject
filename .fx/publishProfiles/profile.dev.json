@@ -1,0 +1,47 @@
+{
+    "solution": {
+        "resourceNameSuffix": "d6a49c",
+        "resourceGroupName": "helly10141351-dev-rg",
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "subscriptionId": "1756abc0-3554-4341-8d6a-46674962ea19",
+        "subscriptionName": "Teams Cloud - Dev Test with TTL = 7 Days",
+        "location": "Central US",
+        "teamsAppTenantId": "{{solution.teamsAppTenantId}}",
+        "provisionSucceeded": true
+    },
+    "fx-resource-appstudio": {
+        "teamsAppId": "bed852c8-ca01-4bbd-90b6-3d2100a5ea4d"
+    },
+    "fx-resource-frontend-hosting": {
+        "storageName": "frontendstggyqg6vdix6riw",
+        "storageResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/helly10141351-dev-rg/providers/Microsoft.Storage/storageAccounts/frontendstggyqg6vdix6riw",
+        "endpoint": "https://frontendstggyqg6vdix6riw.z19.web.core.windows.net",
+        "domain": "frontendstggyqg6vdix6riw.z19.web.core.windows.net"
+    },
+    "fx-resource-bot": {
+        "botId": "bb56a5d8-ff53-449e-9e1d-66c398b773bd",
+        "botPassword": "{{fx-resource-bot.botPassword}}",
+        "objectId": "9a02b60f-de84-47a9-b19d-549b070c03da",
+        "validDomain": "helly10141devf11aac-bot-sites.azurewebsites.net",
+        "appServicePlan": "helly10141devf11aac-bot-serverfarms",
+        "botChannelReg": "helly10141devf11aac-bot-service",
+        "botWebAppResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/helly10141351-dev-rg/providers/Microsoft.Web/sites/helly10141devf11aac-bot-sites",
+        "siteName": "helly10141devf11aac-bot-sites",
+        "siteEndpoint": "https://helly10141devf11aac-bot-sites.azurewebsites.net",
+        "skuName": "B1"
+    },
+    "fx-resource-aad-app-for-teams": {
+        "clientId": "2ef8535f-6bd3-4ccf-bf09-a8bc82d31415",
+        "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
+        "objectId": "34654a57-289a-4f3a-9458-0757ce57fdca",
+        "oauth2PermissionScopeId": "788f7789-7b0d-47f3-8314-55bb1a33d627",
+        "tenantId": "b78ae59c-3ebf-4705-85d6-7283f2cd47f9",
+        "oauthHost": "https://login.microsoftonline.com",
+        "oauthAuthority": "https://login.microsoftonline.com/b78ae59c-3ebf-4705-85d6-7283f2cd47f9",
+        "applicationIdUris": "api://frontendstggyqg6vdix6riw.z19.web.core.windows.net/botid-bb56a5d8-ff53-449e-9e1d-66c398b773bd"
+    },
+    "fx-resource-simple-auth": {
+        "endpoint": "https://helly10141devf11aac-simpleauth-webapp.azurewebsites.net",
+        "skuName": "B1"
+    }
+}
