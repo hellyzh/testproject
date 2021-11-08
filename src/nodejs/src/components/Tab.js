@@ -30,10 +30,12 @@ class Tab extends React.Component {
     componentDidMount() {
 
         // Initialize the Microsoft Teams SDK
-        microsoftTeams.initialize();
+        microsoftTeams.app.initialize();
 
         // Get the user context from Teams and set it in the state
-        microsoftTeams.getContext((context, error) => {
+        //TODO: Convert callback to promise, for more info, please refer to https://aka.ms/teamsfx-callback-to-promise.
+        //TODO: Change the context interface, for more info, please refer to https://aka.ms/teamsfx-context-mapping.
+        microsoftTeams.app.getContext((context, error) => {
             this.setState({ context: context });
         });
 
@@ -43,6 +45,7 @@ class Tab extends React.Component {
             failureCallback: (error) => { this.ssoLoginFailure(error) }
         };
 
+        //TODO: Convert callback to promise, for more info, please refer to https://aka.ms/teamsfx-callback-to-promise.
         microsoftTeams.authentication.getAuthToken(authTokenRequestOptions);
     }
 
@@ -117,6 +120,7 @@ class Tab extends React.Component {
     // Learn more: https://docs.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/authentication/auth-tab-aad#initiate-authentication-flow
     showConsentDialog = () => {
 
+        //TODO: Convert callback to promise, for more info, please refer to https://aka.ms/teamsfx-callback-to-promise.
         microsoftTeams.authentication.authenticate({
             url: window.location.origin + "/auth-start",
             width: 600,
