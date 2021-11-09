@@ -1,6 +1,6 @@
 {
-    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
-    "manifestVersion": "1.5",
+    "$schema": "https://raw.githubusercontent.com/OfficeDev/microsoft-teams-app-schema/preview/DevPreview/MicrosoftTeams.schema.json",
+    "manifestVersion": "m365DevPreview",
     "version": "1.0.0",
     "id": "d82bb81a-4d11-4bdc-a08b-cf9512650746",
     "packageName": "com.contoso.ssoSample",
@@ -23,30 +23,34 @@
         "color": "contoso96x96.png"
     },
     "accentColor": "#60A18E",
-    "staticTabs": [{
-        "entityId": "com.contoso.teamsssosample.static",
-        "name": "Sso Sample Tab",
-        "contentUrl": "https://c758-139-226-21-102.ngrok.io/ssoDemo",
-        "scopes": [
-            "personal"
-        ]
-    }],
-    "configurableTabs": [{
-        "configurationUrl": "https://c758-139-226-21-102.ngrok.io/configure",
-        "canUpdateConfiguration": true,
-        "scopes": [
-            "team"
-        ]
-    }],
+    "staticTabs": [
+        {
+            "entityId": "com.contoso.teamsssosample.static",
+            "name": "Sso Sample Tab",
+            "contentUrl": "https://e435-2404-f801-9000-18-6fec-00-310.ngrok.io/ssoDemo",
+            "scopes": [
+                "personal"
+            ]
+        }
+    ],
+    "configurableTabs": [
+        {
+            "configurationUrl": "https://e435-2404-f801-9000-18-6fec-00-310.ngrok.io/configure",
+            "canUpdateConfiguration": true,
+            "scopes": [
+                "team"
+            ]
+        }
+    ],
     "permissions": [
         "identity",
         "messageTeamMembers"
     ],
     "validDomains": [
-        "c758-139-226-21-102.ngrok.io"
+        "e435-2404-f801-9000-18-6fec-00-310.ngrok.io"
     ],
     "webApplicationInfo": {
         "id": "0b49ad4c-fb9f-45f8-95cf-6f34c18f119b",
-        "resource": "api://c758-139-226-21-102.ngrok.io/0b49ad4c-fb9f-45f8-95cf-6f34c18f119b"
+        "resource": "api://e435-2404-f801-9000-18-6fec-00-310.ngrok.io/0b49ad4c-fb9f-45f8-95cf-6f34c18f119b"
     }
 }

@@ -13,14 +13,16 @@ class ConsentPopup extends React.Component {
     componentDidMount() {
 
         // Initialize the Microsoft Teams SDK
-        microsoftTeams.initialize();
+        microsoftTeams.app.initialize();
 
         // Get the user context from Teams
-        microsoftTeams.getContext((context, error) => {
+        //TODO: Convert callback to promise, for more info, please refer to https://aka.ms/teamsfx-callback-to-promise.
+        //TODO: Change the context interface, for more info, please refer to https://aka.ms/teamsfx-context-mapping.
+        microsoftTeams.app.getContext().then((context, error) => {
 
             this.props.msalContext.instance.loginRedirect({
                 scopes: ["User.Read"],
-                loginHint: context['upn']
+                loginHint: context.user.userPrincipalName
             });
 
         });

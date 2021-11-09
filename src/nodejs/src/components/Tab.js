@@ -30,10 +30,12 @@ class Tab extends React.Component {
     componentDidMount() {
 
         // Initialize the Microsoft Teams SDK
-        microsoftTeams.initialize();
+        microsoftTeams.app.initialize();
 
         // Get the user context from Teams and set it in the state
-        microsoftTeams.getContext((context, error) => {
+        //TODO: Convert callback to promise, for more info, please refer to https://aka.ms/teamsfx-callback-to-promise.
+        //TODO: Change the context interface, for more info, please refer to https://aka.ms/teamsfx-context-mapping.
+        microsoftTeams.app.getContext().then((context, error) => {
             this.setState({ context: context });
         });
 
@@ -43,7 +45,10 @@ class Tab extends React.Component {
             failureCallback: (error) => { this.ssoLoginFailure(error) }
         };
 
-        microsoftTeams.authentication.getAuthToken(authTokenRequestOptions);
+        //TODO: Convert callback to promise, for more info, please refer to https://aka.ms/teamsfx-callback-to-promise. 
+        //microsoftTeams.authentication.getAuthToken(authTokenRequestOptions);
+
+        microsoftTeams.authentication.getAuthToken({resource: ['User.Read']}).then(result => { this.ssoLoginSuccess(result) }).catch(error => { this.ssoLoginFailure(error) });
     }
 
     // React lifecycle method that gets called after a component's state or props updates
@@ -117,13 +122,22 @@ class Tab extends React.Component {
     // Learn more: https://docs.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/authentication/auth-tab-aad#initiate-authentication-flow
     showConsentDialog = () => {
 
+        //TODO: Convert callback to promise, for more info, please refer to https://aka.ms/teamsfx-callback-to-promise.
+        // microsoftTeams.authentication.authenticate({
+        //     url: window.location.origin + "/auth-start",
+        //     width: 600,
+        //     height: 535,
+        //     successCallback: (result) => { this.consentSuccess(result) },
+        //     failureCallback: (reason) => { this.consentFailure(reason) }
+        // });
+
         microsoftTeams.authentication.authenticate({
             url: window.location.origin + "/auth-start",
             width: 600,
-            height: 535,
-            successCallback: (result) => { this.consentSuccess(result) },
-            failureCallback: (reason) => { this.consentFailure(reason) }
-        });
+            height: 535
+        }).then(result => { this.consentSuccess(result) })
+        .catch(reason => { this.consentFailure(reason) });
+        
     }
 
     // Callback function for a successful authorization
@@ -148,7 +162,7 @@ class Tab extends React.Component {
     render() {
 
         let title = Object.keys(this.state.context).length > 0 ?
-            'Congratulations ' + this.state.context['upn'] + '! This is your tab' : <Loader />;
+            'Congratulations ' + this.state.context.user.userPrincipalName + '! This is your tab' : <Loader />;
 
         let ssoMessage = this.state.ssoToken === "" ?
             <Loader label='Performing Azure AD single sign-on authentication...' /> : null;
