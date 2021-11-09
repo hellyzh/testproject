@@ -41,7 +41,7 @@ const msalConfig = {
 function App() {
 
     // Initialize the Microsoft Teams SDK
-    microsoftTeams.app.initialize();
+    microsoftTeams.initialize();
 
     // You will first need to initialize an instance of PublicClientApplication then pass this to MsalProvider as a prop
     const msalInstance = new PublicClientApplication(msalConfig);

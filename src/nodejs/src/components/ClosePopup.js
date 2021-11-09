@@ -21,7 +21,7 @@ class ClosePopup extends React.Component {
     }
 
     componentDidMount() {
-        microsoftTeams.app.initialize();
+        microsoftTeams.initialize();
 
         // This will be run on component mount
         const callbackId = this.props.msalContext.instance.addEventCallback((message) => {

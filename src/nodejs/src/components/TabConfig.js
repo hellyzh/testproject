@@ -20,8 +20,7 @@ class TabConfig extends React.Component {
          * This allows for the addition of query string parameters based on
          * the settings selected by the user.
          */
-        //TODO: Convert callback to promise, for more info, please refer to https://aka.ms/teamsfx-callback-to-promise.
-        microsoftTeams.pages.config.setConfig({ "contentUrl": "https://localhost:3000/tab" });
+        microsoftTeams.settings.setSettings({ "contentUrl": "https://localhost:3000/tab" });
 
         /**
          * After verifying that the settings for your tab are correctly
@@ -29,7 +28,7 @@ class TabConfig extends React.Component {
          * to be valid.  This will enable the save button in the configuration
          * dialog.
          */
-        microsoftTeams.pages.config.setValidityState(true);
+        microsoftTeams.settings.setValidityState(true);
 
         return (
             <div>
