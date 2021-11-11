@@ -1,0 +1,26 @@
+{
+    "appName": "helly11111449",
+    "projectId": "2809262e-e5c9-47b7-b9c1-e901c1dfb23e",
+    "solutionSettings": {
+        "name": "fx-solution-azure",
+        "version": "1.0.0",
+        "hostType": "Azure",
+        "azureResources": [],
+        "capabilities": [
+            "Tab",
+            "Bot",
+            "MessagingExtension"
+        ],
+        "activeResourcePlugins": [
+            "fx-resource-frontend-hosting",
+            "fx-resource-bot",
+            "fx-resource-aad-app-for-teams",
+            "fx-resource-local-debug",
+            "fx-resource-appstudio",
+            "fx-resource-simple-auth"
+        ]
+    },
+    "version": "1.0.0",
+    "isFromSample": false,
+    "programmingLanguage": "javascript"
+}
