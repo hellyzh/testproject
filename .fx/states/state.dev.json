@@ -1,0 +1,62 @@
+{
+    "solution": {
+        "resourceNameSuffix": "b88150",
+        "resourceGroupName": "helly11111034-dev-rg",
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "subscriptionId": "1756abc0-3554-4341-8d6a-46674962ea19",
+        "subscriptionName": "Teams Cloud - Dev Test with TTL = 7 Days",
+        "location": "East US",
+        "teamsAppTenantId": "{{solution.teamsAppTenantId}}",
+        "provisionSucceeded": true
+    },
+    "fx-resource-azure-sql": {
+        "admin": "helly",
+        "sqlResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/helly11111034-dev-rg/providers/Microsoft.Sql/servers/helly11111dev1da031-sql-server",
+        "sqlEndpoint": "helly11111dev1da031-sql-server.database.windows.net",
+        "databaseName": "helly11111dev1da031-database"
+    },
+    "fx-resource-appstudio": {
+        "teamsAppId": "b50e7b2f-383c-4aae-bb3b-bb0550a5c83f"
+    },
+    "fx-resource-frontend-hosting": {
+        "storageName": "frontendstgbghstwjrdatwm",
+        "storageResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/helly11111034-dev-rg/providers/Microsoft.Storage/storageAccounts/frontendstgbghstwjrdatwm",
+        "endpoint": "https://frontendstgbghstwjrdatwm.z13.web.core.windows.net",
+        "domain": "frontendstgbghstwjrdatwm.z13.web.core.windows.net"
+    },
+    "fx-resource-identity": {
+        "identityName": "helly11111dev1da031-managedIdentity",
+        "identityClientId": "eb05e418-a9c2-4ef9-a56b-97662efc66d6",
+        "identityResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/helly11111034-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/helly11111dev1da031-managedIdentity"
+    },
+    "fx-resource-bot": {
+        "botId": "b141728a-002c-4086-8733-063ab8fbfb25",
+        "botPassword": "{{fx-resource-bot.botPassword}}",
+        "objectId": "1fc67979-fe4f-4fed-a40f-b8270860ceb2",
+        "validDomain": "helly11111dev1da031-bot-sites.azurewebsites.net",
+        "appServicePlan": "helly11111dev1da031-bot-serverfarms",
+        "botChannelReg": "helly11111dev1da031-bot-service",
+        "botWebAppResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/helly11111034-dev-rg/providers/Microsoft.Web/sites/helly11111dev1da031-bot-sites",
+        "siteName": "helly11111dev1da031-bot-sites",
+        "siteEndpoint": "https://helly11111dev1da031-bot-sites.azurewebsites.net",
+        "skuName": "B1"
+    },
+    "fx-resource-aad-app-for-teams": {
+        "clientId": "c794332d-536c-4179-99aa-2b84b8c6a0fe",
+        "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
+        "objectId": "313049ca-6b86-40a5-bba2-9a684619a02d",
+        "oauth2PermissionScopeId": "05741129-023a-40e7-90b8-c1b63d7e3cdf",
+        "tenantId": "b78ae59c-3ebf-4705-85d6-7283f2cd47f9",
+        "oauthHost": "https://login.microsoftonline.com",
+        "oauthAuthority": "https://login.microsoftonline.com/b78ae59c-3ebf-4705-85d6-7283f2cd47f9",
+        "applicationIdUris": "api://frontendstgbghstwjrdatwm.z13.web.core.windows.net/botid-b141728a-002c-4086-8733-063ab8fbfb25"
+    },
+    "fx-resource-function": {
+        "functionEndpoint": "https://helly11111dev1da031-function-webapp.azurewebsites.net",
+        "functionAppId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/helly11111034-dev-rg/providers/Microsoft.Web/sites/helly11111dev1da031-function-webapp"
+    },
+    "fx-resource-simple-auth": {
+        "endpoint": "https://helly11111dev1da031-simpleauth-webapp.azurewebsites.net",
+        "skuName": "B1"
+    }
+}
