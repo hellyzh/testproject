@@ -1,0 +1,12 @@
+{
+    "name": "teamsfx-template-api",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "npx func start"
+    },
+    "dependencies": {
+        "@microsoft/microsoft-graph-client": "^3.0.0",
+        "@microsoft/teamsfx": "^0.3.0",
+        "isomorphic-fetch": "^3.0.0"
+    }
+}
