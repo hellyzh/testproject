@@ -1,0 +1,41 @@
+{
+    "solution": {
+        "provisionSucceeded": true,
+        "needCreateResourceGroup": true,
+        "resourceNameSuffix": "bcff67",
+        "resourceGroupName": "helly01061400-dev-rg",
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "subscriptionId": "1756abc0-3554-4341-8d6a-46674962ea19",
+        "subscriptionName": "Teams Cloud - Dev Test with TTL = 7 Days",
+        "location": "Central US",
+        "teamsAppTenantId": "b78ae59c-3ebf-4705-85d6-7283f2cd47f9"
+    },
+    "fx-resource-frontend-hosting": {
+        "domain": "helly01061dev9f10aatab.z19.web.core.windows.net",
+        "endpoint": "https://helly01061dev9f10aatab.z19.web.core.windows.net",
+        "storageResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/helly01061400-dev-rg/providers/Microsoft.Storage/storageAccounts/helly01061dev9f10aatab"
+    },
+    "fx-resource-identity": {
+        "identityName": "helly01061dev9f10aa",
+        "identityResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/helly01061400-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/helly01061dev9f10aa",
+        "identityClientId": "580ba43d-3002-432e-9876-b0fa9f0f7370"
+    },
+    "fx-resource-aad-app-for-teams": {
+        "clientId": "34994156-3eb9-43ab-aac8-35f3d6abebfd",
+        "objectId": "36326bd2-310d-4378-8f6b-0e1950a24141",
+        "oauth2PermissionScopeId": "ef01901b-a567-4916-85a4-1945578f9a4a",
+        "tenantId": "b78ae59c-3ebf-4705-85d6-7283f2cd47f9",
+        "oauthHost": "https://login.microsoftonline.com",
+        "oauthAuthority": "https://login.microsoftonline.com/b78ae59c-3ebf-4705-85d6-7283f2cd47f9",
+        "applicationIdUris": "api://helly01061dev9f10aatab.z19.web.core.windows.net/34994156-3eb9-43ab-aac8-35f3d6abebfd",
+        "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}"
+    },
+    "fx-resource-appstudio": {
+        "teamsAppId": "678afa71-2379-4f0d-ad7b-6bcd87994f91",
+        "teamsAppUpdatedAt": 1641449850614
+    },
+    "fx-resource-simple-auth": {
+        "endpoint": "https://helly01061dev9f10aasimpleauth.azurewebsites.net",
+        "webAppResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/helly01061400-dev-rg/providers/Microsoft.Web/sites/helly01061dev9f10aasimpleAuth"
+    }
+}
