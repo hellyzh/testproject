@@ -1,0 +1,40 @@
+{
+    "solution": {
+        "teamsAppTenantId": "2cbc559e-60b4-4fc9-b4d9-a8f6721a6789",
+        "subscriptionId": "1756abc0-3554-4341-8d6a-46674962ea19",
+        "subscriptionName": "Teams Cloud - Dev Test with TTL = 3 Days",
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "needCreateResourceGroup": false,
+        "resourceGroupName": "helly03171328-dev-rg",
+        "location": "Central US",
+        "resourceNameSuffix": "909b7a",
+        "provisionSucceeded": true
+    },
+    "fx-resource-appstudio": {
+        "tenantId": "2cbc559e-60b4-4fc9-b4d9-a8f6721a6789",
+        "teamsAppId": "0bc06052-832d-44af-a722-34483bfb50b8",
+        "teamsAppUpdatedAt": 1647497359246
+    },
+    "fx-resource-identity": {
+        "identityName": "helly03171dev246d37",
+        "identityResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/helly03171328-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/helly03171dev246d37",
+        "identityClientId": "10c85c35-56f8-475e-98a2-f641f820a031"
+    },
+    "fx-resource-aad-app-for-teams": {
+        "clientId": "53127a04-a6c2-40c2-8af4-8da8282a6f78",
+        "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
+        "objectId": "041c8aef-c950-4717-bde1-b94b276e25c8",
+        "oauth2PermissionScopeId": "5c8e934d-9e9e-4c9b-a758-37aad0fe4f52",
+        "tenantId": "2cbc559e-60b4-4fc9-b4d9-a8f6721a6789",
+        "oauthHost": "https://login.microsoftonline.com",
+        "oauthAuthority": "https://login.microsoftonline.com/2cbc559e-60b4-4fc9-b4d9-a8f6721a6789",
+        "applicationIdUris": "api://helly03171dev246d37tab.z19.web.core.windows.net/53127a04-a6c2-40c2-8af4-8da8282a6f78"
+    },
+    "fx-resource-frontend-hosting": {
+        "domain": "helly03171dev246d37tab.z19.web.core.windows.net",
+        "endpoint": "https://helly03171dev246d37tab.z19.web.core.windows.net",
+        "indexPath": "/index.html#",
+        "storageResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/helly03171328-dev-rg/providers/Microsoft.Storage/storageAccounts/helly03171dev246d37tab"
+    },
+    "fx-resource-cicd": {}
+}
