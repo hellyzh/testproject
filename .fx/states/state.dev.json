@@ -1,0 +1,47 @@
+{
+    "solution": {
+        "provisionSucceeded": true,
+        "teamsAppTenantId": "b78ae59c-3ebf-4705-85d6-7283f2cd47f9",
+        "subscriptionId": "1756abc0-3554-4341-8d6a-46674962ea19",
+        "subscriptionName": "Teams Cloud - Dev Test with TTL = 3 Days",
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "needCreateResourceGroup": true,
+        "resourceGroupName": "hly_9311101-dev-rg",
+        "location": "East US",
+        "resourceNameSuffix": "96d954"
+    },
+    "fx-resource-appstudio": {
+        "tenantId": "b78ae59c-3ebf-4705-85d6-7283f2cd47f9",
+        "teamsAppId": "b049e598-225a-4042-80e2-10f87a3738b5"
+    },
+    "fx-resource-frontend-hosting": {
+        "indexPath": "/index.html#",
+        "domain": "hly93111017e3e31tab.z13.web.core.windows.net",
+        "endpoint": "https://hly93111017e3e31tab.z13.web.core.windows.net",
+        "storageResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/hly_9311101-dev-rg/providers/Microsoft.Storage/storageAccounts/hly93111017e3e31tab"
+    },
+    "fx-resource-aad-app-for-teams": {
+        "clientId": "a1e47909-5138-4d76-b99e-bd09f02f1e87",
+        "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
+        "objectId": "d051d6bc-d133-4497-935a-c28d4be4b172",
+        "oauth2PermissionScopeId": "dca21406-8c7b-46f6-917b-fcbf69b86ba6",
+        "tenantId": "b78ae59c-3ebf-4705-85d6-7283f2cd47f9",
+        "oauthHost": "https://login.microsoftonline.com",
+        "oauthAuthority": "https://login.microsoftonline.com/b78ae59c-3ebf-4705-85d6-7283f2cd47f9",
+        "applicationIdUris": "api://hly93111017e3e31tab.z13.web.core.windows.net/a1e47909-5138-4d76-b99e-bd09f02f1e87",
+        "frontendEndpoint": "https://hly93111017e3e31tab.z13.web.core.windows.net"
+    },
+    "fx-resource-identity": {
+        "identityName": "hly93111017e3e31",
+        "identityResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/hly_9311101-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/hly93111017e3e31",
+        "identityClientId": "ad649c18-c6b7-41b6-9826-587712beb901"
+    },
+    "fx-resource-function": {
+        "sku": "B1",
+        "appName": "hly93111017e3e31api",
+        "domain": "hly93111017e3e31api.azurewebsites.net",
+        "appServicePlanName": "hly93111017e3e31api",
+        "functionAppResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/hly_9311101-dev-rg/providers/Microsoft.Web/sites/hly93111017e3e31api",
+        "functionEndpoint": "https://hly93111017e3e31api.azurewebsites.net"
+    }
+}
