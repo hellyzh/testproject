@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "hly-717-spfxreact-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/hly717Spfxreact/Hly717SpfxreactWebPart.js",
+          "manifest": "./src/webparts/hly717Spfxreact/Hly717SpfxreactWebPart.manifest.json"
+        }
+      ]
+    },
+    "helloworld-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/helloworld/HelloworldWebPart.js",
+          "manifest": "./src/webparts/helloworld/HelloworldWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "Hly717SpfxreactWebPartStrings": "lib/webparts/hly717Spfxreact/loc/{locale}.js",
+    "HelloworldWebPartStrings": "lib/webparts/helloworld/loc/{locale}.js"
+  }
+}

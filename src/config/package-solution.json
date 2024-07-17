@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "hly-717-spfxreact-client-side-solution",
+    "id": "3952d1a8-8c7c-4a3b-a980-ebbd9f64b08a",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.19.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "hly717spfxreact description"
+      },
+      "longDescription": {
+        "default": "hly717spfxreact description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "hly-717-spfxreact Feature",
+        "description": "The feature that activates elements of the hly-717-spfxreact solution.",
+        "id": "59236456-afda-40e1-a9db-8137c1373d05",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/hly-717-spfxreact.sppkg"
+  }
+}

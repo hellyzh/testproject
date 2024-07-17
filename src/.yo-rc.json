@@ -1,0 +1,24 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "hly717spfxreact",
+    "componentType": "webpart",
+    "template": "react",
+    "componentName": "helloworld",
+    "plusBeta": false,
+    "isCreatingSolution": false,
+    "nodeVersion": "16.20.2",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.19.0",
+    "libraryName": "hly-717-spfxreact",
+    "libraryId": "3952d1a8-8c7c-4a3b-a980-ebbd9f64b08a",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionShortDescription": "hly717spfxreact description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false
+  }
+}
