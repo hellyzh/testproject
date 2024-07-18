@@ -1,0 +1,73 @@
+name: uitest
+
+on:
+  workflow_dispatch:
+    inputs:
+      target-vsix-run-id:
+        description: "target vsix github action run id"
+        required: true
+        type: string
+
+      target-cli-version:
+        description: "target cli version or tag, like latest, beta or alpha"
+        required: true
+        type: string
+
+      target-sample-ref:
+        description: "target sample ref, like v1.1.0, v2.0.0 or dev"
+        required: false
+        type: string
+        default: dev
+
+      test-case:
+        description: 'test case, e.g. ["localdebug-tab", "localdebug-bot"], Set empty to run all predefined cases'
+        required: false
+        type: string
+
+      os:
+        default: '["macos-latest", "ubuntu-latest", "windows-latest"]'
+        description: 'os, e.g. ["macos-latest", "ubuntu-latest", "windows-latest"]'
+        required: false
+        type: string
+
+      node-version:
+        default: "[18]"
+        description: "node version, e.g. [18]"
+        required: false
+        type: string
+
+      email-receiver:
+        description: "email notification receiver"
+        required: false
+        type: string
+
+      source-testplan-id:
+        description: "source testplan id: 24569079."
+        required: false
+        type: string
+        default: "24569079"
+
+      target-testplan-name:
+          description: "For example: CY230919. Sync test result to this test plan."
+          required: false
+          type: string
+
+permissions:
+  actions: read
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      AUTO_TEST_PLAN_ID: ${{ github.event.inputs.source-testplan-id }}
+      TARGET_TEST_PLAN_NAME: ${{ github.event.inputs.target-testplan-name }}
+      DEVTUNNEL_CLIENT_ID: ${{ secrets.TEST_CLEAN_CLIENT_ID }}
+      DEVTUNNEL_CLIENT_SECRET: ${{ secrets.TEST_CLEAN_CLIENT_SECRET }}
+      DEVTUNNEL_TENANT_ID: ${{ secrets.TEST_CLEAN_TENANT_ID }}
+
+    steps:
+      - name: Init GitHub CLI
+        run: |
+          echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
