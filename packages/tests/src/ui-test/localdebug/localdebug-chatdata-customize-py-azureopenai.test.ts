@@ -5,6 +5,7 @@
  * @author Helly Zhang <v-helzha@microsoft.com>
  */
 import * as path from "path";
+import { VSBrowser } from "vscode-extension-tester";
 import {
   createEnvironmentWithPython,
   startDebugging,
@@ -90,7 +91,7 @@ describe("Local Debug Tests", function () {
         LocalDebugTaskLabel2.PythonDebugConsole,
         "Running on http://localhost:3978"
       );
-
+      await VSBrowser.instance.driver.sleep(Timeout.longTimeWait);
       const teamsAppId = await localDebugTestContext.getTeamsAppId();
       const page = await initPage(
         localDebugTestContext.context!,
