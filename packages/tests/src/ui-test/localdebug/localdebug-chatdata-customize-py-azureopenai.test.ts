@@ -104,7 +104,7 @@ describe("Local Debug Tests", function () {
         await validateWelcomeAndReplyBot(page, {
           hasWelcomeMessage: false,
           hasCommandReplyValidation: true,
-          botCommand: "Tell me about Contoso Electronics history",
+          botCommand: "Hello",
           expectedWelcomeMessage: ValidationContent.AiChatBotWelcomeInstruction,
           expectedReplyMessage: "1985",
         });
