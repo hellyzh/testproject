@@ -1,87 +1,91 @@
-# TeamsFx-UI-Test
+# Microsoft Teams Toolkit
 
-A UI Test Project based on [Vscode Extension Tester](https://github.com/redhat-developer/vscode-extension-tester/wiki)
+[![DotNet SDK CI workflow](https://github.com/OfficeDev/TeamsFx/actions/workflows/dotnetsdk-ci.yml/badge.svg)](https://github.com/OfficeDev/TeamsFx/actions/workflows/dotnetsdk-ci.yml)
+[![Function Extension CI workflow](https://github.com/OfficeDev/TeamsFx/actions/workflows/FunctionExtensionCI.yml/badge.svg)](https://github.com/OfficeDev/TeamsFx/actions/workflows/FunctionExtensionCI.yml)
+[![CodeQL](https://github.com/OfficeDev/TeamsFx/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/OfficeDev/TeamsFx/actions/workflows/codeql-analysis.yml)
+[![codecov](https://codecov.io/gh/OfficeDev/TeamsFx/branch/dev/graph/badge.svg?token=QQX8WVOEC3)](https://codecov.io/gh/OfficeDev/TeamsFx)
 
-## Getting started
+Teams Toolkit for Visual Studio, Visual Studio Code, and Command Line Interface (CLI) are tools for building Teams apps, fast. Whether you are new to Teams platform or a seasoned developer, Teams Toolkit is the best way to create, build, debug, test, and deploy apps.
 
-### Prerequisites
+<img width="1350" alt="MicrosoftTeams-image" src="https://github.com/OfficeDev/TeamsFx/assets/11220663/103b3f96-40b1-466b-b67c-34db0aab393c">
 
-- node >= 18
-- NPM >= 8
-- m365 account
-- azure account
+Teams Toolkit provides support for the end-to-end Teams development journey, including:
 
-### Setup
+- Seamless integration with [Teams AI Library](https://learn.microsoft.com/microsoftteams/platform/bots/how-to/teams%20conversational%20ai/conversation-ai-quick-start?pivots=qs-javascript) to build intelligent apps with ease.
+- Support for all major Microsoft 365 platform extensibility surfaces, including Copilot for Microsoft 365, tabs, bots, message extensions for Teams as well as Outlook Add-ins.
+- Integrations with the tools, languages, and frameworks you know and love.
+- Scaffolds for getting started fast with Teams extensibility surfaces and common scenarios such as notifications and command & response-style bots.
+- Rapid iteration with full stack debugging, hot reload, secure tunneling and Teams App Test Tool.
+- Simplified SSO authentication.
+- Integrated support for hosting, data storage, and serverless functions.
+- CI/CD actions for GitHub and Azure DevOps to deliver apps with confidence.
 
-- (**Required**) Run `npm install @microsoft/teamsapp-cli@alpha` to download latest CLI
-- (**Options**) If test migration, run `npm install @microsoft/teamsfx-cli@1.2.6` to download old version CLI
-- (**Required**) Run `pnpm install`
-- (**Required**) Run `npm run build`
-- (**Required**) Login your m365 account via TeamsFx extension
-- (**Required**) Login your azure account via TeamsFx extension
-- (**Required**) Setup local environment variables. Create .env file and add following variables (these variables are for verifying installed Teams App, so the test needs to login on-behalf-of you):
+## Get Started
 
-```
-CLEAN_TENANT_ID=
-CLEAN_CLIENT_ID=
+Pick your preferred tool to get started:
 
-AZURE_ACCOUNT_NAME=
-AZURE_ACCOUNT_PASSWORD=
-AZURE_SUBSCRIPTION_ID=
-AZURE_SUBSCRIPTION_NAME=
-AZURE_TENANT_ID=
+- For JavaScript and TypeScript developers, install [Teams Toolkit for Visual Studio Code](https://docs.microsoft.com/microsoftteams/platform/toolkit/teams-toolkit-fundamentals#install-teams-toolkit-for-visual-studio-code).
+- For .NET developers, install [Teams Toolkit for Visual Studio](https://docs.microsoft.com/microsoftteams/platform/toolkit/visual-studio-overview#install-teams-toolkit-for-visual-studio).
+- For command line users, install [Teams Toolkit CLI](https://aka.ms/teamsfx-toolkit-cli#get-started): `npm install -g @microsoft/teamsapp-cli`
 
-M365_ACCOUNT_NAME=
-M365_ACCOUNT_PASSWORD=
-M365_DISPLAY_NAME=
-M365_COLLABORATOR=
+Visit [Microsoft Teams developer documentation](https://aka.ms/teamsfx-docs) to get started with building apps with Teams Toolkit today.
 
-TEAMSFX_DEV_TUNNEL_TEST=true
-TEAMSFX_V3=true
-TEAMSFX_V3_MIGRATION=true
-TEAMSFX_TELEMETRY_TEST=true
-TARGET_CLI_VERSION=
+## Roadmap
 
-CI_ENABLED=true
-```
+Teams Toolkit for Visual Studio, Visual Studio Code, and Command Line Interface (CLI) will be updated regularly with new features and bug fixes to continuously improve end-to-end Teams development experience. Visit our [product roadmap](https://aka.ms/teamsfx-roadmap) to find out what's coming.
 
-- (**Required**) Run `npx extest get-vscode --storage .test-resources --type insider --code_version 1.90.0-insider` to download vscode
-- (**Required**) Run `npx extest get-chromedriver --storage .test-resources --type insider --code_version 1.90.0-insider` to download chromedriver
-- (**Required**) Download TeamsFx vsix file to this project root folder. You can download it from the [artifacts of TeamsFx CD action](https://github.com/OfficeDev/TeamsFx/actions/workflows/cd.yml). Remember to unzip.
-- (**Required**) Run `npx extest install-vsix --storage .test-resources --extensions_dir .test-resources --type insider --vsix_file ${{ YOUR VSIX FILE NAME }} ` to install Teams Toolkit
-- (**OPTIONAL**) If local test docker cases, Run `npx extest install-from-marketplace --storage .test-resources --extensions_dir .test-resources --type stable ms-azuretools.vscode-docker` to install docker extension.
-- (**Required**) Run `npx extest run-tests --storage .test-resources --extensions_dir .test-resources --type stable --code_version 1.88.1 --code_settings ./settings.json ./out/ui-test/**/${{ YOUR TEST CASE }}.test.js` to execute your case
-- (**OPTIONAL**) If you want to debug your case via vscode, replace "YOUR TEST CASE" with your case name in .vscode/launch.json and click F5
+## Support Policy
 
-### How to add a new test case
+Teams Toolkit products will follow [Modern Lifecycle Policy](https://docs.microsoft.com/lifecycle/policies/modern) and extended support as described in our [lifecycle and support document](https://aka.ms/teamsfx-support).
 
-The new test case can be added in the directory `./src/ui-test`. The test can inherit the base class `TestContext`.
+## Feedback
 
-There are some common VSCode operations in `./src/vscodeOperation.ts`. [Here](https://github.com/redhat-developer/vscode-extension-tester) you can learn more about vscode-extension-tester.
+- Ask a question on [Stack Overflow](https://stackoverflow.com/questions/tagged/teams-toolkit)
+- [Request a new feature](https://github.com/OfficeDev/TeamsFx/issues/new?assignees=&labels=&template=feature_request.md&title=)
+- [File an issue](https://github.com/OfficeDev/TeamsFx/issues/new?assignees=&labels=&template=bug_report.md&title=)
+- Send an email to ttkfeedback@microsoft.com to chat with the product team
+- Report security issues and bugs to the Microsoft Security Response Center (MSRC) via secure@microsoft.com. Further information can be found in the [Security TechCenter](https://www.microsoft.com/msrc/faqs-report-an-issue?rtc=1).
 
-If your test case needs to open the browser, sideloading an Teams App and verify the Team App, you can find some common Teams App operations in `./src/playwrightOperation.ts`. [Here](https://playwright.dev/docs/intro) you can learn more about playwright.
+## Repository
 
-If you want to add your case to schedualed job, you can update the `.github/workflows/pvt.json`, choose target os, node version and add your file name to it.
-For example, if your test file is `src/ui-test/localdebug/localdebug-bot-ts.test.ts`, and you want to execute it on windows with node 18, then add `localdebug-bot-ts` to
+This repository contains the following packages:
+| Package | Description |
+| ----------- | ----------- |
+| **Teams Toolkit for Visual Studio Code** [packages/vscode-extension](https://github.com/OfficeDev/TeamsFx/tree/main/packages/vscode-extension) | Teams Toolkit for Visual Studio Code enables you to scaffold, run, debug, and deploy custom Teams apps directly from Visual Studio Code. It provides all the features of the Teams Toolkit CLI tool integrated into the IDE, as well as easy access to more samples, docs and tools. |
+| **Teams Toolkit CLI** [packages/cli](https://github.com/OfficeDev/TeamsFx/tree/main/packages/cli) | Whether you prefer keyboard-centric developer operations, or you are automating your CI/CD pipeline, the Teams Toolkit CLI tool offers the same features as the IDE extensions. |
+| **SDK** [packages/sdk](https://github.com/OfficeDev/TeamsFx/tree/main/packages/sdk) | The main code library encapsulating simple authentication for both client and server-side code tailored for Teams developers. |
+| **API** [packages/api](https://github.com/OfficeDev/TeamsFx/tree/main/packages/api) | The API package is a collection of contracts supported by the IDE Extensions and CLI. It enables developers to write plugins to extend TeamsFx with new capabilities. |
+| **Core** [packages/fx-core](https://github.com/OfficeDev/TeamsFx/tree/main/packages/fx-core) | The Core package centralizes implementation of capabilities shared by the IDE Extensions and the CLI. |
+| **Azure Functions Support** [packages/function-extension](https://github.com/OfficeDev/TeamsFx/tree/main/packages/function-extension) | Teams Toolkit helps developers include server-side code in their Teams application backed by [Azure Functions](https://docs.microsoft.com/azure/azure-functions/). This plugin adds support to simplify the integration of an authentication-aware Azure Function into your Teams app. |
+| **Spec Parser** [packages/spec-parser](https://github.com/OfficeDev/TeamsFx/tree/main/packages/spec-parser) | Teams Toolkit automates the process of generating [API-based message extensions](https://learn.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/api-based-overview) and Adaptive Cards by parsing the OpenAPI description document. |
 
-```json
-{
-  "windows-latest": {
-    "node-18": ["localdebug-bot-ts"]
-  }
-}
-```
+## Contributions
 
-### How to execute for WSL2 users
+This project welcomes contributions and suggestions. Most contributions require you to agree to a
+Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
+the rights to use your contribution. For details, visit [Contributor License Agreement](https://cla.opensource.microsoft.com).
 
-- (In all the steps, use the non-Windows version scripts)
-- Install an X Server (e.g. VcXsrv), start it on display N (e.g. display 1) and disable authentication.
-- Install the dependencies of vscode in WSL2. Refer to [this document](https://code.visualstudio.com/docs/setup/linux#_debian-and-ubuntu-based-distributions).
-- Run the test: use either way, vscode or manually:
-  - vscode:
-    - Run "Debug UI Test WSL2"
-  - Manual way
-    - Set `DISPLAY` environment variable to HostIP:DISPLAY_ID (e.g. 172.16.0.1:1, display number from last step).
-    - Set `DONT_PROMPT_WSL_INSTALL` environment variable to a non empty string. This is to ensure vscode in WSL does not use the Windows version.
-- You can also refer to [this tutorial](https://www.gregbrisebois.com/posts/chromedriver-in-wsl2/)
-- If you need to use Azure account (i.e. use Azure Account extension), you need to [configure your keyring manually](https://github.com/atom/node-keytar/issues/132#issuecomment-444159414). Otherwise, you may encounter the `Unknown or unsupported transport 'disabled' for address 'disabled:'` error.
+When you submit a pull request, a CLA bot will automatically determine whether you need to provide
+a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
+provided by the bot. You will only need to do this once across all repos using our CLA.
+
+- Download our latest daily Builds [here](https://github.com/OfficeDev/TeamsFx/releases)
+- Check out our [contribution](https://github.com/OfficeDev/TeamsFx/blob/main/CONTRIBUTING.md) page for more information
+
+## Telemetry
+
+Teams Toolkit collects usage data and sends it to Microsoft to help improve our products and services. Read our [Privacy Statement](https://go.microsoft.com/fwlink/?LinkId=521839) and [Data Collection Notice](https://docs.opensource.microsoft.com/content/releasing/telemetry.html) to learn more. Learn more in our [FAQ](https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting).
+
+## Trademarks
+
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
+[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
+Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
+Any use of third-party trademarks or logos are subject to those third-party's policies.
+
+## Code of Conduct
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
+contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
