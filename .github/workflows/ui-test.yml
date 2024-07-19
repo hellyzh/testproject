@@ -394,7 +394,7 @@ jobs:
           npx extest get-vscode --storage .test-resources --type stable
 
       - name: Get chromedriver
-        working-directory: packages/tests/.test-resources
+        working-directory: packages/tests
         run: |
           npx extest get-chromedriver --storage .test-resources --type stable
 
