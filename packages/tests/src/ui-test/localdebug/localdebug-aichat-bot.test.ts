@@ -88,7 +88,7 @@ describe("Local Debug Tests", function () {
           hasCommandReplyValidation: true,
           botCommand: "500+500=?",
           expectedWelcomeMessage: ValidationContent.AiChatBotWelcomeInstruction,
-          expectedReplyMessage: "1000",
+          expectedReplyMessage: "1001",
         });
       } else {
         await validateWelcomeAndReplyBot(page, {

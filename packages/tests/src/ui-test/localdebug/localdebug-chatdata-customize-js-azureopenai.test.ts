@@ -90,7 +90,7 @@ describe("Local Debug Tests", function () {
           hasCommandReplyValidation: true,
           botCommand: "Tell me about Contoso Electronics history",
           expectedWelcomeMessage: ValidationContent.AiChatBotWelcomeInstruction,
-          expectedReplyMessage: "1985",
+          expectedReplyMessage: "1986",
         });
       } else {
         await validateWelcomeAndReplyBot(page, {

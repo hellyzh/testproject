@@ -101,7 +101,7 @@ describe("Local Debug Tests", function () {
           hasCommandReplyValidation: true,
           botCommand: "Tell me about Contoso Electronics PerksPlus Program",
           expectedWelcomeMessage: ValidationContent.AiChatBotWelcomeInstruction,
-          expectedReplyMessage: "$1000",
+          expectedReplyMessage: "$1001",
         });
       } else {
         await validateWelcomeAndReplyBot(page, {
