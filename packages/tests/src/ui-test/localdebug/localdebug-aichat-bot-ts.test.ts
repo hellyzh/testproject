@@ -67,7 +67,7 @@ describe("Local Debug Tests", function () {
       editDotEnvFile(envPath, "AZURE_OPENAI_ENDPOINT", azureOpenAiEndpoint);
       editDotEnvFile(
         envPath,
-        "AZURE_OPENAI_MODEL_DEPLOYMENT_NAME",
+        "AZURE_OPENAI_DEPLOYMENT_NAME",
         azureOpenAiModelDeploymentName
       );
 
