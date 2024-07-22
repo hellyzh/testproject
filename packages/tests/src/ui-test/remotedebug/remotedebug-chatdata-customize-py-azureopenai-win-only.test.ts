@@ -80,23 +80,19 @@ describe("Remote debug Tests", function () {
       const azureOpenAiKey = OpenAiKey.azureOpenAiKey
         ? OpenAiKey.azureOpenAiKey
         : "fake";
+      const azureOpenAiEndpoint = OpenAiKey.azureOpenAiEndpoint
+        ? OpenAiKey.azureOpenAiEndpoint
+        : "https://test.com";
       const azureOpenAiModelDeploymentName =
         OpenAiKey.azureOpenAiModelDeploymentName
           ? OpenAiKey.azureOpenAiModelDeploymentName
-          : "https://test.com";
-      const azureOpenAiEndpoint = OpenAiKey.azureOpenAiEndpoint
-        ? OpenAiKey.azureOpenAiEndpoint
-        : "fake";
+          : "fake";
       editDotEnvFile(envPath, "SECRET_AZURE_OPENAI_API_KEY", azureOpenAiKey);
-      editDotEnvFile(
-        envPath,
-        "AZURE_OPENAI_ENDPOINT",
-        azureOpenAiModelDeploymentName
-      );
+      editDotEnvFile(envPath, "AZURE_OPENAI_ENDPOINT", azureOpenAiEndpoint);
       editDotEnvFile(
         envPath,
         "AZURE_OPENAI_MODEL_DEPLOYMENT_NAME",
-        azureOpenAiEndpoint
+        azureOpenAiModelDeploymentName
       );
       await provisionProject(appName, projectPath);
       await deployProject(projectPath, Timeout.botDeploy);
@@ -138,10 +134,10 @@ describe("Remote debug Tests", function () {
             await validateWelcomeAndReplyBot(page, {
               hasWelcomeMessage: false,
               hasCommandReplyValidation: true,
-              botCommand: "Tell me about Contoso Electronics history",
+              botCommand: "Tell me about Contoso Electronics PerksPlus Program",
               expectedWelcomeMessage:
                 ValidationContent.AiChatBotWelcomeInstruction,
-              expectedReplyMessage: "1985",
+              expectedReplyMessage: "$1000",
             });
           } else {
             await validateWelcomeAndReplyBot(page, {

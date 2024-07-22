@@ -78,23 +78,19 @@ describe("Remote debug Tests", function () {
       const azureOpenAiKey = OpenAiKey.azureOpenAiKey
         ? OpenAiKey.azureOpenAiKey
         : "fake";
+      const azureOpenAiEndpoint = OpenAiKey.azureOpenAiEndpoint
+        ? OpenAiKey.azureOpenAiEndpoint
+        : "https://test.com";
       const azureOpenAiModelDeploymentName =
         OpenAiKey.azureOpenAiModelDeploymentName
           ? OpenAiKey.azureOpenAiModelDeploymentName
-          : "https://test.com";
-      const azureOpenAiEndpoint = OpenAiKey.azureOpenAiEndpoint
-        ? OpenAiKey.azureOpenAiEndpoint
-        : "fake";
+          : "fake";
       editDotEnvFile(envPath, "SECRET_AZURE_OPENAI_API_KEY", azureOpenAiKey);
-      editDotEnvFile(
-        envPath,
-        "AZURE_OPENAI_ENDPOINT",
-        azureOpenAiModelDeploymentName
-      );
+      editDotEnvFile(envPath, "AZURE_OPENAI_ENDPOINT", azureOpenAiEndpoint);
       editDotEnvFile(
         envPath,
         "AZURE_OPENAI_DEPLOYMENT_NAME",
-        azureOpenAiEndpoint
+        azureOpenAiModelDeploymentName
       );
       await provisionProject(appName, projectPath);
       await deployProject(projectPath, Timeout.botDeploy);

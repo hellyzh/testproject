@@ -5,7 +5,6 @@
  * @author Helly Zhang <v-helzha@microsoft.com>
  */
 import * as path from "path";
-import { VSBrowser } from "vscode-extension-tester";
 import {
   createEnvironmentWithPython,
   startDebugging,
@@ -63,23 +62,19 @@ describe("Local Debug Tests", function () {
       const azureOpenAiKey = OpenAiKey.azureOpenAiKey
         ? OpenAiKey.azureOpenAiKey
         : "fake";
+      const azureOpenAiEndpoint = OpenAiKey.azureOpenAiEndpoint
+        ? OpenAiKey.azureOpenAiEndpoint
+        : "https://test.com";
       const azureOpenAiModelDeploymentName =
         OpenAiKey.azureOpenAiModelDeploymentName
           ? OpenAiKey.azureOpenAiModelDeploymentName
-          : "https://test.com";
-      const azureOpenAiEndpoint = OpenAiKey.azureOpenAiEndpoint
-        ? OpenAiKey.azureOpenAiEndpoint
-        : "fake";
+          : "fake";
       editDotEnvFile(envPath, "SECRET_AZURE_OPENAI_API_KEY", azureOpenAiKey);
-      editDotEnvFile(
-        envPath,
-        "AZURE_OPENAI_ENDPOINT",
-        azureOpenAiModelDeploymentName
-      );
+      editDotEnvFile(envPath, "AZURE_OPENAI_ENDPOINT", azureOpenAiEndpoint);
       editDotEnvFile(
         envPath,
         "AZURE_OPENAI_MODEL_DEPLOYMENT_NAME",
-        azureOpenAiEndpoint
+        azureOpenAiModelDeploymentName
       );
 
       await createEnvironmentWithPython();
@@ -91,7 +86,7 @@ describe("Local Debug Tests", function () {
         LocalDebugTaskLabel2.PythonDebugConsole,
         "Running on http://localhost:3978"
       );
-      await VSBrowser.instance.driver.sleep(Timeout.longTimeWait);
+
       const teamsAppId = await localDebugTestContext.getTeamsAppId();
       const page = await initPage(
         localDebugTestContext.context!,
@@ -104,9 +99,9 @@ describe("Local Debug Tests", function () {
         await validateWelcomeAndReplyBot(page, {
           hasWelcomeMessage: false,
           hasCommandReplyValidation: true,
-          botCommand: "Tell me about Contoso Electronics history",
+          botCommand: "Tell me about Contoso Electronics PerksPlus Program",
           expectedWelcomeMessage: ValidationContent.AiChatBotWelcomeInstruction,
-          expectedReplyMessage: "1985",
+          expectedReplyMessage: "$1000",
         });
       } else {
         await validateWelcomeAndReplyBot(page, {
