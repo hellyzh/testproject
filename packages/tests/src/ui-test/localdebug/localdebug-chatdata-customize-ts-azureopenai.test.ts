@@ -60,20 +60,20 @@ describe("Local Debug Tests", function () {
       const azureOpenAiModelDeploymentName =
         OpenAiKey.azureOpenAiModelDeploymentName
           ? OpenAiKey.azureOpenAiModelDeploymentName
-          : "https://test.com";
+          : "fake";
       const azureOpenAiEndpoint = OpenAiKey.azureOpenAiEndpoint
         ? OpenAiKey.azureOpenAiEndpoint
-        : "fake";
+        : "https://test.com";
       editDotEnvFile(envPath, "SECRET_AZURE_OPENAI_API_KEY", azureOpenAiKey);
       editDotEnvFile(
         envPath,
         "AZURE_OPENAI_ENDPOINT",
-        azureOpenAiModelDeploymentName
+        azureOpenAiEndpoint
       );
       editDotEnvFile(
         envPath,
         "AZURE_OPENAI_DEPLOYMENT_NAME",
-        azureOpenAiEndpoint
+        azureOpenAiModelDeploymentName
       );
 
       await startDebugging(DebugItemSelect.DebugInTeamsUsingChrome);

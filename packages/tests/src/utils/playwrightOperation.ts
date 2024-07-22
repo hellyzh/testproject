@@ -1294,6 +1294,10 @@ export async function validateWelcomeAndReplyBot(
         await frame?.waitForSelector(
           `p:has-text("${options?.expectedReplyMessage}")`
         );
+        await page.screenshot({
+          path: getPlaywrightScreenshotPath("success"),
+          fullPage: true,
+        });
         console.log(
           `verify bot successfully with content ${options?.expectedReplyMessage}!!!`
         );

@@ -65,12 +65,12 @@ describe("Local Debug Tests", function () {
       editDotEnvFile(
         envPath,
         "AZURE_OPENAI_ENDPOINT",
-        azureOpenAiModelDeploymentName
+        azureOpenAiEndpoint
       );
       editDotEnvFile(
         envPath,
         "AZURE_OPENAI_MODEL_DEPLOYMENT_NAME",
-        azureOpenAiEndpoint
+        azureOpenAiModelDeploymentName
       );
 
       await startDebugging(DebugItemSelect.DebugInTeamsUsingChrome);
